@@ -1,0 +1,3 @@
+function hic(){
+  alert('hic')
+}
