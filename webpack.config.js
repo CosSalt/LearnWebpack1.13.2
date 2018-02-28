@@ -23,7 +23,6 @@ module.exports = {
       //inject:'body',
       //inject:true, //与body类似
       //inject:false, //不加载js,适合在index.html中根据参数手动写js
-      inject:false,
       title:'webpack is good',
       minify:{//代码压缩
         removeComments: true,
@@ -33,18 +32,17 @@ module.exports = {
     new htmlWebpackPlugin({
       filename:'a.html',
       template:'index.html',
-      inject:false,
       title:'this is a.html',
       /*minify:{//代码压缩
         removeComments: true,
         collapseWhitespace: true
       }*/
-      chunks:['main','a']
+      //chunks:['main','a'] //chunks包含那些chunk
+      excludeChunks:['b','c'] //excludeChunks:不包含那些chunk
     }),
     new htmlWebpackPlugin({
       filename:'b.html',
       template:'index.html',
-      inject:false,
       title:'this is b.html',
       /*minify:{//代码压缩
         removeComments: true,
@@ -55,7 +53,6 @@ module.exports = {
     new htmlWebpackPlugin({
       filename:'c.html',
       template:'index.html',
-      inject:false,
       title:'this is c.html',
       minify:{//代码压缩
         removeComments: true,
