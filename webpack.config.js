@@ -35,13 +35,21 @@ module.exports = {
       },{
         test: /\.tpl$/,
         loader: 'ejs-loader'
-      },{
+      },/*{
         test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader:'file-loader',
         query:{
           name:'assets/[name]-[hash:5].[ext]'
         }
-      },
+      },*/
+      {
+        test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader:'url-loader',
+        query:{
+          limit: 20000,
+          name:'assets/[name]-[hash:5].[ext]'
+        }
+      }
     ]
   },
   postcss:[
