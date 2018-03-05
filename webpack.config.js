@@ -29,7 +29,19 @@ module.exports = {
       },{
         test:/\.less$/,
         loader: 'style!css?importLoaders=1!postcss!less'
-      }
+      },{
+        test: /\.html$/,
+        loader: 'html-loader'
+      },{
+        test: /\.tpl$/,
+        loader: 'ejs-loader'
+      },{
+        test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader:'file-loader',
+        query:{
+          name:'assets/[name]-[hash:5].[ext]'
+        }
+      },
     ]
   },
   postcss:[
