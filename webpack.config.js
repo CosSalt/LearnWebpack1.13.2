@@ -42,13 +42,20 @@ module.exports = {
           name:'assets/[name]-[hash:5].[ext]'
         }
       },*/
-      {
+      /*{
         test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader:'url-loader',
         query:{
           limit: 20000,
           name:'assets/[name]-[hash:5].[ext]'
         }
+      },*/
+      {
+        test:/\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loaders:[
+          'url-loader?limit=10000&name=assets/[name]-[hash:5].[ext]',
+          'image-webpack'
+        ]
       }
     ]
   },

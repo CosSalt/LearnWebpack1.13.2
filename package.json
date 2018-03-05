@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --config webpack.config.js --progress --display-modules --colors --display-reasons"
+    "webpackHis": "webpack --config webpack.config.js --progress --display-modules --colors --display-reasons",
+    "webpack": "webpack --config webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.30.1",
+    "image-webpack-loader": "^4.1.0",
     "less": "^3.0.1",
     "less-loader": "^2.2.3",
     "postcss-loader": "^1.1.0",
